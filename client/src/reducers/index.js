@@ -8,7 +8,6 @@ import followedPosts from "./followedposts";
 
 export default combineReducers({
   auth: signup,
-  // myPosts: createPost,
   user: currentUser,
   posts: allPosts,
   myPosts,
