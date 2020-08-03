@@ -23,7 +23,7 @@ export const signup = (data, ownProps) => {
 };
 
 export const signin = (data, ownProps) => {
-  console.log(ownProps)
+  console.log(ownProps);
   return dispatch => {
     fetch("/signin", {
       method: "post",
@@ -242,22 +242,7 @@ export const followedPosts = () => {
   };
 };
 
-export const updatePic = pic => {
-  return dispatch => {
-    fetch("/updatepic", {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("jwt")
-      },
-      body: JSON.stringify(pic)
-    })
-      .then(res => res.json())
-      .then(data => dispatch({ type: "CURRENT-USER", payload: data }));
-  };
-};
-
-export const updateProfile = (data) => {
+export const updateProfile = data => {
   return dispatch => {
     fetch("/updateprofile", {
       method: "put",
@@ -272,11 +257,7 @@ export const updateProfile = (data) => {
         if (!data.error) {
           localStorage.setItem("user", JSON.stringify(data));
           dispatch({ type: "CURRENT-USER", payload: data });
-          // browserHistory.push('/')
-
-          // ownProps.history.push("/");
         }
-        // dispatch({ type: "SIGNUP", payload: {user:data,token:localStorage.getItem("token")} });
       });
   };
 };

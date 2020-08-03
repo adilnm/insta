@@ -91,21 +91,6 @@ router.put("/unfollow", requireLogin, (req, res) => {
   );
 });
 
-router.put("/updatepic", requireLogin, (req, res) => {
-  console.log(req.body);
-  User.findByIdAndUpdate(
-    req.user._id,
-    { $set: { pic: req.body.pic } },
-    { new: true },
-    (err, result) => {
-      if (err) {
-        return res.status(422).json({ error: err });
-      }
-      res.json(result);
-    }
-  );
-});
-
 router.put("/updateprofile", requireLogin, (req, res) => {
   const { name, pic } = req.body;
   if (!name || !pic) {
