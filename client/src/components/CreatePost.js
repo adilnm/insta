@@ -14,8 +14,8 @@ class CreatePost extends React.Component {
   }
 
   componentDidMount() {
-    const user=JSON.parse(localStorage.getItem("user"))
-    return  !user ? this.props.history.push("/signin") : null;
+    const user = JSON.parse(localStorage.getItem("user"));
+    return !user ? this.props.history.push("/signin") : null;
   }
 
   handleChange = event => {
@@ -48,7 +48,6 @@ class CreatePost extends React.Component {
   };
 
   render() {
-    
     return (
       <div
         className="card input-field"
@@ -92,7 +91,5 @@ class CreatePost extends React.Component {
     );
   }
 }
-
-
 
 export default connect(null, { createPost })(CreatePost);

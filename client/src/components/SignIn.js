@@ -79,7 +79,7 @@ const mstp = state => {
 
 const mdtp = (dispatch, ownProps) => {
   return {
-  signin: data => dispatch(signin(data, ownProps)),
+    signin: data => dispatch(signin(data, ownProps))
   };
 };
 export default connect(mstp, mdtp)(SignIn);

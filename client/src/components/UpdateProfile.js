@@ -38,8 +38,8 @@ class UpdateProfile extends React.Component {
           name: this.state.name,
           pic: this.state.url
         })
-      )
-      this.handleShow()
+      );
+    this.handleShow();
     // this.setState({ loading: true });
   };
 
@@ -106,6 +106,4 @@ const mstp = ({ user }) => {
   };
 };
 
-
-
-export default connect(mstp, {updateProfile})(UpdateProfile);
+export default connect(mstp, { updateProfile })(UpdateProfile);
